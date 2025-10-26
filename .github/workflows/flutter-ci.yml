@@ -18,7 +18,9 @@ on:
       - "flatpak/**"
 
 jobs:
-  run-ci:
-    uses: ./.github/workflows/flutter-build.yml
+  run-flutter-nightly-build:
+    uses: ./.github/workflows/flutter-build-win-64.yml
+    secrets: inherit
     with:
-      upload-artifact: false
+      upload-artifact: true
+      upload-tag: "nightly"
