@@ -1,4 +1,4 @@
-name: Build Win-64 RustDesk
+name: Build Win-64 RustDesk Workflow
 
 on:
   workflow_call:
