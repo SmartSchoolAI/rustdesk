@@ -1,4 +1,4 @@
-name: Flutter Nightly Build
+name: Flutter Every Nightly Build
 
 on:
   schedule:
