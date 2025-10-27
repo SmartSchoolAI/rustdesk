@@ -48,7 +48,7 @@ use hbb_common::{
     bail,
     config::{
         self, keys, use_ws, Config, LocalConfig, PeerConfig, PeerInfoSerde, Resolution,
-        CONNECT_TIMEOUT, READ_TIMEOUT, RELAY_PORT, RENDEZVOUS_PORT,
+        CONNECT_TIMEOUT, READ_TIMEOUT, RELAY_PORT, RENDEZVOUS_PORT, RENDEZVOUS_SERVERS,
     },
     fs::JobType,
     futures::future::{select_ok, FutureExt},
@@ -72,10 +72,6 @@ use hbb_common::{
     },
     AddrMangle, ResultType, Stream,
 };
-
-pub const RENDEZVOUS_SERVERS: &[&str] = &["175.213.101.160"];
-pub const RS_PUB_KEY: &str = "X9a9k1H8WAHxAX1yrx0ae+SO+IipaHb1+ajfRzi6C2s=";
-
 pub use helper::*;
 use scrap::{
     codec::Decoder,
@@ -763,7 +759,7 @@ impl Client {
         conn: &mut Stream,
     ) -> ResultType<Option<Vec<u8>>> {
         let rs_pk = get_rs_pk(if key.is_empty() {
-            RS_PUB_KEY
+            config::RS_PUB_KEY
         } else {
             key
         });
@@ -1794,7 +1790,7 @@ impl LoginConfigHandler {
             let server = server_key.next().unwrap_or_default();
             let args = server_key.next().unwrap_or_default();
             let key = if server == PUBLIC_SERVER {
-                RS_PUB_KEY.to_owned()
+                config::RS_PUB_KEY.to_owned()
             } else {
                 let mut args_map: HashMap<String, &str> = HashMap::new();
                 for arg in args.split('&') {
