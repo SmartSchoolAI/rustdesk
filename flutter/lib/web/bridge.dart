@@ -1605,7 +1605,7 @@ class RustdeskImpl {
   }
 
   bool isOutgoingOnly({dynamic hint}) {
-    return false;
+    return true;
   }
 
   bool isCustomClient({dynamic hint}) {
@@ -1613,23 +1613,23 @@ class RustdeskImpl {
   }
 
   bool isDisableSettings({dynamic hint}) {
-    return false;
+    return true;
   }
 
   bool isDisableAb({dynamic hint}) {
-    return false;
+    return true;
   }
 
   bool isDisableGroupPanel({dynamic hint}) {
-    return false;
+    return true;
   }
 
   bool isDisableAccount({dynamic hint}) {
-    return false;
+    return true;
   }
 
   bool isDisableInstallation({dynamic hint}) {
-    return false;
+    return true;
   }
 
   Future<bool> isPresetPassword({dynamic hint}) {
