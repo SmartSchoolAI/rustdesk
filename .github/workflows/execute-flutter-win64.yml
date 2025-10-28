@@ -1,4 +1,4 @@
-name: Execute Full Flutter CI
+name: Execute Win64
 
 on:
   workflow_dispatch:
