@@ -1,4 +1,4 @@
-name: Build the flutter version of the RustDesk
+name: Lib Build All Platforms
 
 on:
   workflow_call:
@@ -49,10 +49,10 @@ env:
 
 jobs:
   generate-bridge:
-    uses: ./.github/workflows/bridge.yml
+    uses: ./.github/workflows/lib-bridge.yml
 
   build-RustDeskTempTopMostWindow:
-    uses: ./.github/workflows/third-party-RustDeskTempTopMostWindow.yml
+    uses: ./.github/workflows/lib-third-party-RustDeskTempTopMostWindow.yml
     with:
       upload-artifact: ${{ inputs.upload-artifact }}
       target: windows-2022

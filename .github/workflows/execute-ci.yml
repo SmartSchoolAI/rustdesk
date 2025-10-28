@@ -1,4 +1,4 @@
-name: CI
+name: Execute CI
 
 env:
 #   MIN_SUPPORTED_RUST_VERSION: "1.46.0"

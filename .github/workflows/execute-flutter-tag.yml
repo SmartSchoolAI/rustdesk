@@ -1,4 +1,4 @@
-name: Flutter Tag Build
+name: Execute Flutter Tag Build
 
 on:
   workflow_dispatch:
@@ -11,7 +11,7 @@ on:
 
 jobs:
   run-flutter-tag-build:
-    uses: ./.github/workflows/flutter-build.yml
+    uses: ./.github/workflows/lib-flutter-build.yml
     secrets: inherit
     with:
       upload-artifact: true
