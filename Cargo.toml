@@ -4,7 +4,7 @@ version = "1.4.3"
 authors = ["rustdesk <info@rustdesk.com>"]
 edition = "2021"
 build= "build.rs"
-description = "RustDesk Remote Desktop"
+description = "QuickDesk Remote Desktop"
 default-run = "rustdesk"
 rust-version = "1.75"
 
@@ -202,9 +202,9 @@ members = ["libs/scrap", "libs/hbb_common", "libs/enigo", "libs/clipboard", "lib
 exclude = ["vdi/host", "examples/custom_plugin"]
 
 [package.metadata.winres]
-LegalCopyright = "Copyright © 2025 Purslane Ltd. All rights reserved."
-ProductName = "RustDesk"
-FileDescription = "RustDesk Remote Desktop"
+LegalCopyright = "Copyright © 2025 QuickDesk LLC. All rights reserved."
+ProductName = "QuickDesk"
+FileDescription = "QuickDesk Remote Desktop"
 OriginalFilename = "rustdesk.exe"
 
 [target.'cfg(target_os="windows")'.build-dependencies]
@@ -222,7 +222,7 @@ docopt = "1.1"
 
 [package.metadata.bundle]
 name = "RustDesk"
-identifier = "com.carriez.rustdesk"
+identifier = "com.carriez.quickdesk"
 icon = ["res/32x32.png", "res/128x128.png", "res/128x128@2x.png"]
 osx_minimum_system_version = "10.14"
 
