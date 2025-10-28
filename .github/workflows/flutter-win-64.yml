@@ -1,4 +1,4 @@
-name: Execute Win64
+name: Execute Win 64
 
 on:
   workflow_dispatch:
